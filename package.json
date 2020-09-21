@@ -1,0 +1,15 @@
+{
+  "name": "sy-components",
+  "version": "1.0.0",
+  "description": "mycomponents",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "syswing",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}

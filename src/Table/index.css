@@ -1,0 +1,77 @@
+.ylTableRank {
+  width: 95%;
+  text-align: center;
+}
+.ylTableRank th {
+  color: #0099FF;
+}
+.ylTableRank tbody tr:nth-child(1) td:first-of-type {
+  background: linear-gradient(to bottom, #F54545, #F54545) bottom no-repeat;
+  background-size: 68% 20%;
+  background-position: 50% 75%;
+}
+.ylTableRank tbody tr:nth-child(2) td:first-of-type {
+  background: linear-gradient(to bottom, #FF8547, #FF8547) bottom no-repeat;
+  background-size: 68% 20%;
+  background-position: 50% 75%;
+}
+.ylTableRank tbody tr:nth-child(3) td:first-of-type {
+  background: linear-gradient(to bottom, #FFAC38, #FFAC38) bottom no-repeat;
+  background-size: 68% 20%;
+  background-position: 50% 75%;
+}
+.ylTableRank tbody tr td:first-of-type {
+  background: linear-gradient(to bottom, #0099FF, #0099FF) bottom no-repeat;
+  background-size: 68% 20%;
+  background-position: 50% 75%;
+}
+.ylTableRanknoNO {
+  width: 100%;
+  text-align: center;
+}
+.ylTableRanknoNO th {
+  color: #0099FF;
+}
+.ylTableRanknoNO tbody tr {
+  margin: 2rem 0;
+}
+.ylTableRanknoNO tbody tr:nth-child(1) td:first-of-type {
+  background: linear-gradient(to bottom, #F54545, #F54545) bottom no-repeat;
+  background-size: 26% 55%;
+  background-position: 50% 50%;
+}
+.ylTableRanknoNO tbody tr:nth-child(2) td:first-of-type {
+  background: linear-gradient(to bottom, #FF8547, #FF8547) bottom no-repeat;
+  background-size: 26% 55%;
+  background-position: 50% 50%;
+}
+.ylTableRanknoNO tbody tr:nth-child(3) td:first-of-type {
+  background: linear-gradient(to bottom, #FFAC38, #FFAC38) bottom no-repeat;
+  background-size: 26% 55%;
+  background-position: 50% 50%;
+}
+.ylTableRanknoNO tbody tr td:first-of-type {
+  background: linear-gradient(to bottom, #0099FF, #0099FF) bottom no-repeat;
+  background-size: 26% 55%;
+  background-position: 50% 50%;
+}
+.ylTable {
+  width: 100%;
+  text-align: center;
+}
+.ylTable tbody tr:nth-child(odd) {
+  background-color: rgba(39, 114, 239, 0.1);
+}
+.ylTable th {
+  color: #0099FF;
+}
+.scrollInner {
+  overflow-y: scroll;
+  width: calc(100% + 20px);
+}
+.scroll {
+  overflow-x: hidden;
+}
+.divider {
+  border-bottom: 1px dashed #707070;
+}
