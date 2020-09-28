@@ -11,5 +11,9 @@
   "devDependencies": {
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
