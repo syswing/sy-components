@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import _ from 'lodash';
 import styles from './index.less';
-import './index.less'
+import './index.less';
 
 type Source = {
   [propName: string]: any;
@@ -11,7 +11,8 @@ type Source = {
 type TableCols = {
   dataIndex: string;
   title: string;
-  render?:Function;
+  render?: Function;
+  unit?: string;
 };
 
 export type Order = 'desc' | 'asc';
@@ -24,7 +25,7 @@ export interface YlTableProps {
   max?: number;
   type?: 'noNO';
   LineHeight?: number;
-  divider?:boolean;
+  divider?: boolean;
 }
 
 interface ScrollProps {
@@ -35,9 +36,11 @@ interface ScrollProps {
 
 // ? 对字段进行快速排序
 // ? array.sort 排序算法 判断数组长度 选择 归并 插入 双轴快速排序
-export const quickSort = (arr:any[],field:string,order:Order) => {
-  return order === 'desc' ? arr?.sort((a,b) => b[field] - a[field]) : arr?.sort((a,b) => a[field] - b[field])
-}
+export const quickSort = (arr: any[], field: string, order: Order) => {
+  return order === 'desc'
+    ? arr?.sort((a, b) => b[field] - a[field])
+    : arr?.sort((a, b) => a[field] - b[field]);
+};
 
 const Scroll = (props: ScrollProps) => {
   const { max, LineHeight } = props;
@@ -55,8 +58,8 @@ const Scroll = (props: ScrollProps) => {
 };
 
 const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
-  const { source, cols, rank, order, max, type,divider } = props;
-  const mCols = _.cloneDeep(cols)
+  const { source, cols, rank, order, max, type, divider } = props;
+  const mCols = _.cloneDeep(cols);
   const LineHeight = props.LineHeight ?? 28;
 
   if (rank) {
@@ -76,9 +79,7 @@ const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
     });
   }
 
-
   // !rank ? styles.ylTable : styles.ylTableRank
-
 
   return (
     <Scroll max={max ?? 5} LineHeight={LineHeight}>
@@ -102,13 +103,26 @@ const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
               tds.push(<td key="-1">{`${type ? '' : 'NO.'}${++index}`}</td>);
             Object.keys(data).forEach((key, index2) => {
               const col = mCols.find(col => col.dataIndex === key);
-              if(col && col?.render){
-                tds.push(<td key={index2}>{col.render(data[col?.dataIndex ?? 0])}</td>);
-              }else{
-                tds.push(<td key={index2}>{data[col?.dataIndex ?? 0]}</td>);
+              // ? 过滤dataindex里面 col 没有的字段
+              if(col){
+                tds.push(
+                  <td key={index2}>
+                    {(col &&
+                      col.render &&
+                      col.render(
+                        data[col?.dataIndex ?? 0] + `${col && col?.unit || ''}`,
+                      )) ??
+                      data[col?.dataIndex ?? 0] + `${col && col?.unit || ''}`}
+                  </td>,
+                );
               }
+
             });
-            return <tr className={divider? 'divider':''} key={index}>{tds}</tr>;
+            return (
+              <tr className={divider ? 'divider' : ''} key={index}>
+                {tds}
+              </tr>
+            );
           })}
         </tbody>
       </table>
