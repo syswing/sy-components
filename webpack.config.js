@@ -1,14 +1,20 @@
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.ts',
+  entry: './example/index.tsx',
   resolve: {
-    extensions: ['.js', '.ts', '.tsx']
+    extensions: ['.js', '.ts', '.tsx'],
+    alias: {
+      '@': path.resolve('src')// 这样配置后 @ 可以指向 src 目录
+    }
   },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath:'/'
   },
   module: {
     rules: [{
@@ -16,7 +22,10 @@ module.exports = {
       use: [{
         loader: "style-loader"
       }, {
-        loader: "css-loader"
+        loader: "css-loader",
+        options:{
+          modules: true
+        }
       }, {
         loader: "less-loader"
       }]
@@ -24,23 +33,27 @@ module.exports = {
       test: /\.tsx?$/,
       use: 'ts-loader',
       exclude: /node_modules/
-    }, {
-      test: /\.less$/,
-      use: [{ loader: "postcss-loader" }, {
-        loader: "style-loader"
-      }, {
-        loader: "css-loader"
-      }, {
-        loader: "less-loader"
-      }]
     }]
   },
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerPort: '7777',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Custom template',
+      // Load a custom template (lodash by default)
+      template: 'index.html'
+    })
+  ],
   devServer: {
-    historyApiFallback: {
-      rewrites: [{ from: /./, to: '/index.html' }],
-    },
-    disableHostCheck: true,
-    hot: true,
-    open: true,
+    // historyApiFallback: true,
+    // // disableHostCheck: true,
+    // hot: true,
+    // // open: true,
+    // // contentBase: './dist',
+    // port:3002,
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000
   },
 };

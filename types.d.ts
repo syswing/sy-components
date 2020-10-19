@@ -1,1 +1,6 @@
+// declare module 'lodash'
+// declare module 'classnames'
+// declare module 'react'
 declare module '*.less'
+declare module 'react-dom'
+declare module '@/*'
