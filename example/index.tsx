@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Table } from "@/index";
-
+// import { Table } from "@/index";
+import { Table } from '../build/main/index'
+import '../build/main.css'
 
 ReactDOM.render(
   <div style={{width:300}}>

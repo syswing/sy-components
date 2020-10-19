@@ -4,3 +4,4 @@
 declare module '*.less'
 declare module 'react-dom'
 declare module '@/*'
+declare module '../build/main/index'
