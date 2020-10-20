@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames';
 import _ from 'lodash';
 import styles from './index.less';
-import './index.less';
 
 type Source = {
   [propName: string]: any;
@@ -42,6 +41,8 @@ export const quickSort = (arr: any[], field: string, order: Order) => {
     : arr?.sort((a, b) => a[field] - b[field]);
 };
 
+
+
 const Scroll = (props: ScrollProps) => {
   const { max, LineHeight } = props;
 
@@ -58,6 +59,7 @@ const Scroll = (props: ScrollProps) => {
 };
 
 const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
+  
   const { source, cols, rank, order, max, type, divider } = props;
   const mCols = _.cloneDeep(cols);
   const LineHeight = props.LineHeight ?? 28;
@@ -85,7 +87,10 @@ const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
     <Scroll max={max ?? 5} LineHeight={LineHeight}>
       <table
         className={classNames(
-          !rank ? styles.ylTable : styles[`ylTableRank${type ?? ''}`],
+          !rank ? styles.ylTable :
+          // @ts-ignore 
+          styles[`ylTableRank${type ?? ''}`],
+          // classes.ylTableRank
         )}
         style={{ lineHeight: `${LineHeight}px` }}
       >
@@ -119,7 +124,7 @@ const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
 
             });
             return (
-              <tr className={divider ? 'divider' : ''} key={index}>
+              <tr className={divider ? styles.divider : ''} key={index}>
                 {tds}
               </tr>
             );

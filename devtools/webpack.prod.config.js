@@ -1,29 +1,26 @@
 const path = require('path');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+const WebpackBar = require('webpackbar');
 // const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'production',
   entry: './src/index.ts',
   resolve: {
-    extensions: ['.js', '.ts', '.tsx','.css'],
+    extensions: ['.js', '.ts', '.tsx'],
     alias: {
       '@': path.resolve('src')// 这样配置后 @ 可以指向 src 目录
     }
   },
   output: {
-    path: path.resolve('build'), // 要输出多文件这里就要配置输出目录而不是当个文件
-    filename: '[name]/index.js',
-    // output.library 和 output.libraryTarget 一起使用 对外暴露 library 及定义输出组件库格式
-    library: ['xxx-components', '[name]'], 
+    path: path.resolve('build'),
+    filename: '[name].js',
+    library: '[name]',
     libraryTarget: 'umd',
-    publicPath: '/'
+    publicPath: '/dist/',
+    umdNamedDefine: true
   },
-  // optimization: {
-  //   minimize: true,
-  //   minimizer: [new TerserPlugin()],
-  // },
   module: {
     rules: [{
       test: /\.less$/,
@@ -50,8 +47,14 @@ module.exports = {
       use: 'ts-loader',
       exclude: /node_modules/
     }]
-  },
+  }
+  ,
   plugins: [
+    new CaseSensitivePathsPlugin(),
+    new WebpackBar({
+      name: '🚚sy Design Tools',
+      color: '#2f54eb',
+    }),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // all options are optional
@@ -60,4 +63,17 @@ module.exports = {
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
   ],
+  externals: {
+    "react": {
+      root: 'React',
+      commonjs2: 'react',
+      commonjs: 'react',
+      amd: 'react'
+    },'react-dom': {
+      root: 'ReactDOM',
+      commonjs2: 'react-dom',
+      commonjs: 'react-dom',
+      amd: 'react-dom',
+    },
+  }
 };

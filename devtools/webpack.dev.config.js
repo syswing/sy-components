@@ -33,6 +33,15 @@ module.exports = {
       test: /\.tsx?$/,
       use: 'ts-loader',
       exclude: /node_modules/
+    },{
+      test: /\.css$/,
+      use: [{
+        loader: "style-loader"
+      }, {
+        loader: "css-loader"
+      },{
+        loader: "postcss-loader"
+      }]
     }]
   },
   plugins: [

@@ -2,24 +2,36 @@
   "name": "sy-components",
   "version": "1.0.0",
   "description": "mycomponents",
-  "main": "index.ts",
+  "sy-components": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.config.js --mode development --open",
+    "start": "webpack-dev-server --config ./devtools/webpack.dev.config.js --mode development --open",
     "server": "node ./example/src/server.js",
-    "build": "webpack --config webpack.prod.js --mode production"
+    "build": "webpack --config ./devtools/webpack.prod.config.js",
+    "build:types": "tsc -p tsconfig.build.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "syswing",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.26",
+    "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-links": "^6.0.26",
+    "@storybook/react": "^6.0.26",
+    "babel-loader": "^8.1.0",
+    "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.0.0",
+    "react-is": "^16.13.1",
     "terser-webpack-plugin": "^5.0.0",
     "webpack": "^4.44.2",
     "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^3.7.2",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpackbar": "^4.0.0"
   },
   "dependencies": {
     "@types/classnames": "^2.2.10",
@@ -34,6 +46,7 @@
     "postcss-loader": "^4.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.14.0",
+    "react-jss": "^10.4.0",
     "style-loader": "^2.0.0",
     "ts-loader": "^8.0.4",
     "typescript": "^4.0.3"

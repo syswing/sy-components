@@ -3,3 +3,4 @@
 package-lock.json
 yarn.lock
 /dist/**/*
+/site/node_modules
