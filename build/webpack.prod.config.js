@@ -14,7 +14,7 @@ module.exports = {
     }
   },
   output: {
-    path: path.resolve('build'),
+    path: path.resolve('dist'),
     filename: '[name].js',
     library: '[name]',
     libraryTarget: 'umd',
