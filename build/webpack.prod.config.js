@@ -26,17 +26,19 @@ module.exports = {
       test: /\.less$/,
       use: [{
         loader: "style-loader"
-      },{
-        loader:  MiniCssExtractPlugin.loader,
-        options: {
-          esModule: false,
-          modules: {
-            namedExport: true,
-          },
-        },
-      }, {
+      }, 
+      // {
+      //   loader: MiniCssExtractPlugin.loader,
+      //   options: {
+      //     esModule: false,
+      //     modules: {
+      //       namedExport: true,
+      //     },
+      //   },
+      // }, 
+      {
         loader: "css-loader",
-        options:{
+        options: {
           modules: true
         }
       }, {
@@ -55,13 +57,13 @@ module.exports = {
       name: '🚚sy Design Tools',
       color: '#2f54eb',
     }),
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // all options are optional
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-      ignoreOrder: false, // Enable to remove warnings about conflicting order
-    }),
+    // new MiniCssExtractPlugin({
+    //   // Options similar to the same options in webpackOptions.output
+    //   // all options are optional
+    //   filename: '[name].css',
+    //   chunkFilename: '[id].css',
+    //   ignoreOrder: false, // Enable to remove warnings about conflicting order
+    // }),
   ],
   externals: {
     "react": {
@@ -69,7 +71,7 @@ module.exports = {
       commonjs2: 'react',
       commonjs: 'react',
       amd: 'react'
-    },'react-dom': {
+    }, 'react-dom': {
       root: 'ReactDOM',
       commonjs2: 'react-dom',
       commonjs: 'react-dom',

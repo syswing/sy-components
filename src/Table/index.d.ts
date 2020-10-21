@@ -1,5 +1,4 @@
 import React from 'react';
-import './index.less';
 declare type Source = {
     [propName: string]: any;
 };
