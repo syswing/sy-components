@@ -4,23 +4,29 @@
 
 本项目仅供学习交流
 
+## 安装
+
+```bash
+npm i syswing-react
+```
+
 ### 文档
 
-* 不会分页的table [不会分页的table](https://github.com/syswing/syswing-react/blob/master/src/Table/README.md)
+* [不会分页的table](https://github.com/syswing/syswing-react/blob/master/src/Table/README.md)
   
-* 简单的切换 单切 [简单的切换 单切](https://github.com/syswing/syswing-react/blob/master/src/Tab/README.md)
+* [简单的切换 单切](https://github.com/syswing/syswing-react/blob/master/src/Tab/README.md)
 
 ## 开发组件
 
 * 构建
 
-```shell
+```bash
 npm run build
 ```
 
 * 开发
 
-```shell
+```bash
 npm run start
 ```
 
