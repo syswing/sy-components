@@ -1,22 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Table } from '../dist/main.js'
+import { Table, Tab } from "../dist/main.js";
 
 ReactDOM.render(
-  <div style={{width:300}}>
-    <Table
-      source={[
-        { name: "苹果", count: 123 },
-        { name: "香蕉", count: 2345 },
-        { name: "菠萝", count: 123 },
-        { name: "梨", count: 445 },
-      ]}
-      cols={[
-        { dataIndex: "name", title: "名称" },
-        { dataIndex: "count", title: "数量" },
-      ]}
-      // rank={'count'}
-    />
-  </div>,
+  <>
+    <div style={{ width: 300 }}>
+      <Table
+        source={[
+          { name: "苹果", count: 123, sale: 555 },
+          { name: "香蕉", count: 234, sale: 666 },
+          { name: "菠萝", count: 123, sale: 666 },
+          { name: "梨", count: 445, sale: 666, edit: "阿斯蒂芬" },
+        ]}
+        cols={[
+          { dataIndex: "name", title: "名称" },
+          { dataIndex: "count", title: "数量" },
+          { dataIndex: "sale", title: "销售额", unit: "元" },
+          {
+            dataIndex: "edit",
+            title: "编辑",
+            render: (content: any) => {
+              return <button>{content}</button>;
+            },
+          },
+        ]}
+        rank={"count"}
+      />
+    </div>
+    <div style={{ width: 300 }}>
+      <Tab tabArrs={['测试1','测试2']} callback={(e:any) => console.log(e)} style={{background:'#fff'}}/>
+    </div>
+  </>,
   document.getElementById("root")
 );
