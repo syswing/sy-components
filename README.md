@@ -4,7 +4,13 @@
 
 本项目仅供学习交流
 
-## 开始
+### 文档
+
+* 不会分页的table [不会分页的table](https://github.com/syswing/syswing-react/blob/master/src/Table/README.md)
+  
+* 简单的切换 单切 [简单的切换 单切](https://github.com/syswing/syswing-react/blob/master/src/Tab/README.md)
+
+## 开发组件
 
 * 构建
 
@@ -18,20 +24,6 @@ npm run build
 npm run start
 ```
 
-* 文档
-
-```shel
-to be continue
-```
-
-## 开发组件
-
-在 example 目录下编写组件渲染代码
-
 ## 测试组件
 
 测试
-
-## 编译组件
-
-编译
