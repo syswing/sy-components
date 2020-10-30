@@ -7,7 +7,13 @@
 ## 安装
 
 ```bash
-npm i syswing-react
+npm i --save syswing-react
+```
+
+👍 or yarn
+
+```bash
+yarn add syswing-react
 ```
 
 ### 文档
