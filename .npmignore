@@ -1,0 +1,13 @@
+.storybook/
+.history/
+build/
+example/
+src/
+useit/
+
+index.html
+postcss.config.js
+tsconfig.build.json
+tsconfig.json
+yarn.lock
+types.d.ts
