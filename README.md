@@ -22,6 +22,8 @@ yarn add syswing-react
   
 * [简单的切换 单切](https://github.com/syswing/syswing-react/blob/master/src/Tab/README.md)
 
+* [加载中](https://github.com/syswing/syswing-react/blob/master/src/Tab/README.md)
+
 ## 开发组件
 
 * 构建

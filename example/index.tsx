@@ -32,7 +32,6 @@ ReactDOM.render(
     </div>
     <div style={{ width: 300,marginBottom:20 }}>
       <Loadings.Elastic/>
-
     </div>
   </>,
   document.getElementById("root")
