@@ -7,6 +7,7 @@ export interface YlTabProps {
   callback:Function;
   style?:CSSProperties;
   itemStyle?:CSSProperties;
+  styleNo?:1|2|3|4|5;
 }
 
 
@@ -16,7 +17,7 @@ const YlTab: React.FC<YlTabProps>= (props:YlTabProps) => {
   useEffect(() => {
     callback(currentSelected)
   },[currentSelected])
-  return <div style={style} className={styles.tab5}>
+  return <div style={style} className={styles[`tab${props?.styleNo ?? ''}`]}>
     {tabArrs.map((tab,index) => {
       return <span style={itemStyle} key={`tab${index}`} className={index === currentSelected ? styles.selected : null} onClick={() => setCurrentSelected(index)}>{tab}</span>
     })}

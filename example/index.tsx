@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Table, Tab,Loadings } from "../dist/main.js";
+// import { Table, Tab,Loadings } from "../dist/main.js";
+import { Table, Tab,Loadings,Buttons } from "../src/index";
 
 ReactDOM.render(
   <>
@@ -10,7 +11,10 @@ ReactDOM.render(
           { name: "苹果", count: 123, sale: 555 },
           { name: "香蕉", count: 234, sale: 666 },
           { name: "菠萝", count: 123, sale: 666 },
-          { name: "梨", count: 445, sale: 666, edit: "阿斯蒂芬" },
+          { name: "菠萝", count: 123, sale: 666 },
+          { name: "菠萝", count: 123, sale: 666 },
+          { name: "菠萝", count: 123, sale: 666 , edit: "渲染按钮1"},
+          { name: "梨", count: 445, sale: 666, edit: "渲染按钮2" },
         ]}
         cols={[
           { dataIndex: "name", title: "名称" },
@@ -31,7 +35,22 @@ ReactDOM.render(
       <Tab tabArrs={['测试1','测试2']} callback={(e:any) => console.log(e)} style={{background:'#fff'}}/>
     </div>
     <div style={{ width: 300,marginBottom:20 }}>
+      <Tab styleNo={4} tabArrs={['测试1','测试2']} callback={(e:any) => console.log(e)} style={{background:'#fff'}}/>
+    </div>
+    <div style={{ width: 300,marginBottom:20 }}>
+      <Tab styleNo={5} tabArrs={['测试1','测试2']} callback={(e:any) => console.log(e)} style={{background:'#fff'}}/>
+    </div>
+    <div style={{ width: 300,marginBottom:20 }}>
+      <Tab styleNo={2} tabArrs={['测试1','测试2']} callback={(e:any) => console.log(e)} style={{background:'#fff'}}/>
+    </div>
+    <div style={{ width: 300,marginBottom:20 }}>
+      <Tab styleNo={3} tabArrs={['测试1','测试2']} callback={(e:any) => console.log(e)} style={{background:'#fff'}}/>
+    </div>
+    <div style={{ width: 300,marginBottom:60 }}>
       <Loadings.Elastic/>
+    </div>
+    <div style={{ width: 300,marginBottom:20,marginLeft:100 }}>
+      <Buttons.Bubbly>冒泡按钮</Buttons.Bubbly>
     </div>
   </>,
   document.getElementById("root")
