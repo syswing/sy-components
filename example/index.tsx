@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Table, Tab } from "../dist/main.js";
+import { Table, Tab,Loadings } from "../dist/main.js";
 
 ReactDOM.render(
   <>
@@ -27,8 +27,12 @@ ReactDOM.render(
         rank={"count"}
       />
     </div>
-    <div style={{ width: 300 }}>
+    <div style={{ width: 300,marginBottom:20 }}>
       <Tab tabArrs={['测试1','测试2']} callback={(e:any) => console.log(e)} style={{background:'#fff'}}/>
+    </div>
+    <div style={{ width: 300,marginBottom:20 }}>
+      <Loadings.Elastic/>
+
     </div>
   </>,
   document.getElementById("root")

@@ -31,6 +31,8 @@ ReactDOM.render(
 );
 ```
 
+![alt 例子](./table.png)
+
 ## 类型定义
 
 src/Table/index.d.ts

@@ -15,6 +15,8 @@ ReactDOM.render(
 );
 ```
 
+![alt 例子](./tab.png)
+
 ## 类型定义
 
 src/Tab/index.d.ts
