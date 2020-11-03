@@ -50,7 +50,9 @@ ReactDOM.render(
       <Loadings.Elastic/>
     </div>
     <div style={{ width: 300,marginBottom:20,marginLeft:100 }}>
-      <Buttons.Bubbly>冒泡按钮</Buttons.Bubbly>
+      <Buttons.Bubbly  
+        primaryColor='#000'
+      >冒泡按钮</Buttons.Bubbly>
     </div>
   </>,
   document.getElementById("root")

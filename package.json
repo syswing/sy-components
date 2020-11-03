@@ -3,10 +3,16 @@
   "version": "0.0.1",
   "description": "syswing's components collection",
   "syswing-react": "index.ts",
-  "main":"./dist/main.js",
-  "keywords": ["react","component"],
+  "main": "./dist/main.js",
+  "keywords": [
+    "react",
+    "component"
+  ],
   "private": false,
-  "repository": { "type": "git", "url": "https://github.com/syswing/syswing-react.git" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syswing/syswing-react.git"
+  },
   "bugs": "https://github.com/syswing/syswing-react/issues",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -17,43 +23,48 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "resolutions": {
+    "styled-components": "^5"
+  },
   "author": "syswing",
   "license": "MIT",
   "devDependencies": {
-    "@types/classnames": "^2.2.10",
-    "@types/lodash": "^4.14.162",
-    "@types/react": "^16.9.53",
-    "react": "^16.13.1",
-    "react-dom": "^16.14.0",
     "@babel/core": "^7.12.3",
     "@storybook/addon-actions": "^6.0.26",
     "@storybook/addon-essentials": "^6.0.26",
     "@storybook/addon-links": "^6.0.26",
     "@storybook/react": "^6.0.26",
+    "@types/classnames": "^2.2.10",
+    "@types/lodash": "^4.14.162",
+    "@types/react": "^16.9.53",
     "babel-loader": "^8.1.0",
     "case-sensitive-paths-webpack-plugin": "^2.3.0",
-    "html-webpack-plugin": "^4.5.0",
-    "mini-css-extract-plugin": "^1.0.0",
-    "react-is": "^16.13.1",
-    "terser-webpack-plugin": "^5.0.0",
-    "webpack": "^4.44.2",
-    "webpack-bundle-analyzer": "^3.9.0",
-    "ts-loader": "^8.0.4",
-    "typescript": "^4.0.3",
-    "react-jss": "^10.4.0",
     "css-loader": "^4.3.0",
+    "html-webpack-plugin": "^4.5.0",
     "less": "^3.12.2",
     "less-loader": "^7.0.2",
+    "mini-css-extract-plugin": "^1.0.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^4.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.14.0",
+    "react-is": "^16.13.1",
+    "react-jss": "^10.4.0",
+    "style-loader": "^2.0.0",
+    "terser-webpack-plugin": "^5.0.0",
+    "ts-loader": "^8.0.4",
+    "typescript": "^4.0.3",
+    "webpack": "^4.44.2",
+    "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-dev-server": "^3.11.0",
-    "webpackbar": "^4.0.0",
-    "postcss-import": "^12.0.1",
-    "postcss-loader": "^4.0.4",
-    "style-loader": "^2.0.0"
+    "webpackbar": "^4.0.0"
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "lodash": "^4.17.20"
+    "color": "^3.1.3",
+    "lodash": "^4.17.20",
+    "styled-components": "^5.2.1"
   }
 }

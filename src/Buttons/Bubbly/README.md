@@ -23,4 +23,5 @@ null
 
 ## props
 
-null
+* styles?: React.CSSProperties;         // ? 按钮额外样式
+* primaryColor?: string;                // ? 按钮主题色
