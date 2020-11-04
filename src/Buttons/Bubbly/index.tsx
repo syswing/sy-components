@@ -1,8 +1,6 @@
-// import classNames from "classnames";
 import styled, { keyframes } from "styled-components";
 import React, { useState } from "react";
 import Color from 'color'
-// import style from "./index.less";
 
 const Bubbly = ({
   children,
@@ -14,9 +12,7 @@ const Bubbly = ({
   primaryColor?:string;
 }) => {
   const [isanimate, setIsanimate] = useState(false);
-  // rgba(255, 0, 130, 0.5)
   const color = Color(primaryColor ?? '#ff0081')
-  console.log(color)
   const fuschia = color.hex();
   const buttonBg = fuschia;
   const textColor = "#fff";
@@ -28,9 +24,9 @@ const Bubbly = ({
     50% {
       background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;}
     100% {
-        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
       background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
-      }
+    }
   `;
 
   const bottomBubbles = keyframes`
@@ -74,7 +70,7 @@ const Bubbly = ({
       width: 140%;
       height: 100%;
       left: -20%;
-      z-index: -1000;
+      z-index: 1;
       transition: all ease-in-out 0.5s;
       background-repeat: no-repeat;
     }
@@ -144,10 +140,6 @@ const Bubbly = ({
     }
   `;
 
-  
-
-  
-
   const animate = () => {
     setIsanimate(true);
     setTimeout(function () {
@@ -157,11 +149,9 @@ const Bubbly = ({
 
   return (
     <Button
-
       style={styles}
       onClick={animate}
       className={isanimate ? 'animate' : ""}
-      // className={classNames(style.bubblyButton, isanimate ? style.animate : "")}
     >
       {children}
     </Button>
