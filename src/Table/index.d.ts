@@ -18,6 +18,7 @@ export interface YlTableProps {
     type?: 'noNO';
     LineHeight?: number;
     divider?: boolean;
+    styles?: React.CSSProperties;
 }
 export declare const quickSort: (arr: any[], field: string, order: Order) => any[];
 declare const YlTable: React.FC<YlTableProps>;

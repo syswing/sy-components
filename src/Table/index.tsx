@@ -25,6 +25,7 @@ export interface YlTableProps {
   type?: 'noNO';
   LineHeight?: number;
   divider?: boolean;
+  styles?:React.CSSProperties;
 }
 
 interface ScrollProps {
@@ -90,9 +91,10 @@ const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
           !rank ? styles.ylTable :
           // @ts-ignore 
           styles[`ylTableRank${type ?? ''}`],
+          
           // classes.ylTableRank
         )}
-        style={{ lineHeight: `${LineHeight}px` }}
+        style={{ lineHeight: `${LineHeight}px`,...props?.styles }}
       >
         <thead>
           <tr>

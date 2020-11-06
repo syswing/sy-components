@@ -5,5 +5,8 @@ declare const _default: {
         styles?: import("react").CSSProperties | undefined;
         primaryColor?: string | undefined;
     }) => JSX.Element;
+    More: ({ text }: {
+        text: string;
+    }) => JSX.Element;
 };
 export default _default;
