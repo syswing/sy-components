@@ -52,7 +52,7 @@ ReactDOM.render(
       </>
     </Card>
     <Card title="弹性加载中" styles={warpper}>
-      <Loadings.Elastic/>
+      <Loadings.Elastic primaryColor='#ff0081'/>
     </Card>
     <Card title="冒泡按钮" styles={warpper}>
       <Buttons.Bubbly  
