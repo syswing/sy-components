@@ -42,6 +42,14 @@ npm run build
 npm run start
 ```
 
+* 使用nrm
+
+```bash
+npm install -g nrm  // 安装
+nrm use taobao      // 切换taobao镜像
+nrm use npm      // 切换npm镜像
+```
+
 ## 测试组件
 
 测试

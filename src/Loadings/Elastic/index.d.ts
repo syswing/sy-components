@@ -1,3 +1,5 @@
 /// <reference types="react" />
-declare const Elastic: () => JSX.Element;
+declare const Elastic: ({ primaryColor }: {
+    primaryColor?: string | undefined;
+}) => JSX.Element;
 export default Elastic;

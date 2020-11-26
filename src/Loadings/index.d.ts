@@ -1,5 +1,7 @@
 /// <reference types="react" />
 declare const _default: {
-    Elastic: () => JSX.Element;
+    Elastic: ({ primaryColor }: {
+        primaryColor?: string | undefined;
+    }) => JSX.Element;
 };
 export default _default;

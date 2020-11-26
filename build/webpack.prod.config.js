@@ -54,7 +54,7 @@ module.exports = {
   plugins: [
     new CaseSensitivePathsPlugin(),
     new WebpackBar({
-      name: '🚚sy Design Tools',
+      name: '🚚 sy Design Tools',
       color: '#2f54eb',
     }),
     // new MiniCssExtractPlugin({
