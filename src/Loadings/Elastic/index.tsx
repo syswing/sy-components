@@ -2,15 +2,17 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import Color from 'color'
 
-const Elastic = ({primaryColor}:{
-  primaryColor?:string
+const Elastic = ({primaryColor,width,height}:{
+  primaryColor?:string,
+  width?:number,
+  height?:number,
 }) => {
   const color = Color(primaryColor ?? '#6767fa')
 
   const loadingAnimate = keyframes`
     0% {
-      width: 50pt;
-      height: 50pt;
+      width: ${width ?? 50}pt;
+      height: ${height ?? 50}pt;
       margin-top: 0;
     }
     25% {
@@ -21,11 +23,11 @@ const Elastic = ({primaryColor}:{
       width: 4pt;
     }
     75% {
-      width: 50pt;
+      width: ${width ?? 50}pt;
     }
     100% {
-      width: 50pt;
-      height: 50pt;
+      width: ${width ?? 50}pt;
+      height: ${height ?? 50}pt;
       margin-top: 0;
     }
   `
@@ -45,8 +47,8 @@ const Elastic = ({primaryColor}:{
   `
 
   const Loader = styled.div`
-    width: 50pt;
-    height: 50pt;
+    width: ${width ?? 50}pt;
+    height: ${height ?? 50}pt;
     border-radius: 100%;
     border: ${color.hex()} 4pt solid;
     margin-left: auto;
@@ -54,12 +56,6 @@ const Elastic = ({primaryColor}:{
     background-color: transparent;
     animation: ${loadingAnimate} 1s infinite;
   `
-
-{/* <div className={styles.container}>
-      <div className={styles.flex}>
-        <div className={styles.loader}></div>
-      </div>
-    </div> */}
   return (
     <Loading>
       <Container>

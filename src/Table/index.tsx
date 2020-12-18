@@ -1,7 +1,6 @@
 import React from 'react';
-import classNames from 'classnames';
 import _ from 'lodash';
-import styles from './index.less';
+import styled from 'styled-components'
 
 type Source = {
   [propName: string]: any;
@@ -42,6 +41,14 @@ export const quickSort = (arr: any[], field: string, order: Order) => {
     : arr?.sort((a, b) => a[field] - b[field]);
 };
 
+const XHidden = styled.div`
+  overflow-x: hidden;
+`
+
+const ScrollInner = styled.div`
+  overflow-y: scroll;
+  width:  calc(100% + 20px); 
+`
 
 
 const Scroll = (props: ScrollProps) => {
@@ -50,12 +57,13 @@ const Scroll = (props: ScrollProps) => {
   const style = {
     height: `${(max + 1) * ((LineHeight ?? 28) + 3)}px`,
   };
+
   return (
-    <div className={styles.scroll}>
-      <div className={styles.scrollInner} style={style}>
+    <XHidden>
+      <ScrollInner style={style}>
         {props.children}
-      </div>
-    </div>
+      </ScrollInner>
+    </XHidden>
   );
 };
 
@@ -64,6 +72,80 @@ const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
   const { source, cols, rank, order, max, type, divider } = props;
   const mCols = _.cloneDeep(cols);
   const LineHeight = props.LineHeight ?? 28;
+
+  const DividerTr = styled.tr`
+    ${!divider && 'border-bottom:1px dashed #707070;'}
+  `
+
+  const NormalTabel = !rank ? styled.table`
+    width:100%;
+    text-align: center;
+    tbody tr:nth-child(odd){
+      background-color: rgba(39, 114, 239,.1);
+    }
+    th{
+      color:#0099FF;
+    }
+  `: type === 'noNO' ?  styled.table`
+    width:100%;
+    text-align: center;
+
+    th{
+      color:#0099FF;
+    }
+    tbody tr{
+      margin:2rem 0;
+      &:nth-child(1) td:first-of-type{
+        background:linear-gradient(to bottom, #F54545, #F54545) bottom no-repeat;
+        background-size: 26% 55%;
+        background-position: 50% 50%;
+      }
+      &:nth-child(2) td:first-of-type{
+        background:linear-gradient(to bottom, #FF8547, #FF8547) bottom no-repeat;
+        background-size: 26% 55%;
+        background-position: 50% 50%;
+      }
+      &:nth-child(3) td:first-of-type{
+        background:linear-gradient(to bottom, #FFAC38, #FFAC38) bottom no-repeat;
+        background-size: 26% 55%;
+        background-position: 50% 50%;
+      }
+      & td:first-of-type{
+        background:linear-gradient(to bottom, #0099FF, #0099FF) bottom no-repeat;
+        background-size: 26% 55%;
+        background-position: 50% 50%;
+      }
+    }
+  ` : styled.table`
+      width:95%;
+      text-align: center;
+
+      th{
+        color:#0099FF;
+      }
+      tbody tr{
+        &:nth-child(1) td:first-of-type{
+          background:linear-gradient(to bottom, #F54545, #F54545) bottom no-repeat;
+          background-size: 68% 20%;
+          background-position: 50% 75%;
+        }
+        &:nth-child(2) td:first-of-type{
+          background:linear-gradient(to bottom, #FF8547, #FF8547) bottom no-repeat;
+          background-size: 68% 20%;
+          background-position: 50% 75%;
+        }
+        &:nth-child(3) td:first-of-type{
+          background:linear-gradient(to bottom, #FFAC38, #FFAC38) bottom no-repeat;
+          background-size: 68% 20%;
+          background-position: 50% 75%;
+        }
+        & td:first-of-type{
+          background:linear-gradient(to bottom, #0099FF, #0099FF) bottom no-repeat;
+          background-size: 68% 20%;
+          background-position: 50% 75%;
+        }
+      }
+    `
 
   if (rank) {
     mCols.unshift({
@@ -86,14 +168,7 @@ const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
 
   return (
     <Scroll max={max ?? 5} LineHeight={LineHeight}>
-      <table
-        className={classNames(
-          !rank ? styles.ylTable :
-          // @ts-ignore 
-          styles[`ylTableRank${type ?? ''}`],
-          
-          // classes.ylTableRank
-        )}
+      <NormalTabel
         style={{ lineHeight: `${LineHeight}px`,...props?.styles }}
       >
         <thead>
@@ -126,13 +201,13 @@ const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
 
             });
             return (
-              <tr className={divider ? styles.divider : ''} key={index}>
+              <DividerTr key={index}>
                 {tds}
-              </tr>
+              </DividerTr>
             );
           })}
         </tbody>
-      </table>
+      </NormalTabel>
     </Scroll>
   );
 };

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Card = ({ styles,children,title,contentStyles }: { styles: {
   float?:string,
-  display?:string
+  display?:string,
 },children:React.ReactChild,title?:string,contentStyles?:React.CSSProperties }) => {
 
   const transition = "all 0.3s cubic-bezier(.25,.8,.25,1)";
@@ -19,7 +19,7 @@ const Card = ({ styles,children,title,contentStyles }: { styles: {
 
   const Card = styled.div`
     ${ styles?.float ? `float:${styles.float};` : null}
-    background: #fff;
+    background: #fff ;
     border-radius: 2px;
     display: ${styles?.display ?? 'inline-block'};
     margin: 1rem;
