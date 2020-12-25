@@ -2,12 +2,13 @@ import React from 'react';
 declare type Source = {
     [propName: string]: any;
 };
-declare type TableCols = {
+interface TableCols {
     dataIndex: string;
-    title: string;
+    title?: string;
     render?: Function;
     unit?: string;
-};
+    width?: string | number;
+}
 export declare type Order = 'desc' | 'asc';
 export interface YlTableProps {
     source: Source[];
