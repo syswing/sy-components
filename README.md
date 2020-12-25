@@ -22,7 +22,7 @@ yarn add syswing-react
 
 * [不会分页的table](https://github.com/syswing/syswing-react/blob/master/src/Table/README.md)
   
-* [简单的切换 单切](https://github.com/syswing/syswing-react/blob/master/src/Tab/README.md)
+* [简单的切换](https://github.com/syswing/syswing-react/blob/master/src/Tab/README.md)
 
 * [加载中](https://github.com/syswing/syswing-react/blob/master/src/Loadings/README.md)
 

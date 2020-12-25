@@ -1,6 +1,6 @@
 {
   "name": "syswing-react",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "syswing's components collection",
   "syswing-react": "index.ts",
   "main": "./dist/main.js",
