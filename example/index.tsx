@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import { Table, Tab,Loadings,Buttons } from "../dist/main.js";
-import { Table, Tab, Loadings, Buttons } from "../src/index";
+import { Table, Tab, Loadings, Buttons,SlideTab } from "../src/index";
 // import  Waterfall from '../src/Layout/Waterfall'
 import Card from "./Card";
 import Toys from "../src/Toys";
@@ -112,6 +112,13 @@ ReactDOM.render(
     </Card>
     <Card title="更多按钮" styles={warpper}>
       <Buttons.More text="hover更多" />
+    </Card>
+    <Card title="slide tab" styles={warpper}>
+      <>
+      <SlideTab tabArrs={['aa','bb','123','阿道夫']} callback={(e:Number) => {
+        console.log(e)
+      }}/>
+      </>
     </Card>
     <Card title="Among Us" styles={warpper}>
       <Toys.AmongUs.Connect />
