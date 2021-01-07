@@ -62,7 +62,6 @@ const Connect = () => {
       if (visibility) {
         completedLights[selector - 1] = 1;
         if (completedLights[0] === 1 && completedLights[1] === 1 && completedLights[2] === 1 && completedLights[3] === 1) {
-          audioTask.play();
           window.setTimeout(() => {
             reset('.drag-1', '.line-1', 70, 185);
             reset('.drag-2', '.line-2', 60, 375);
@@ -101,7 +100,6 @@ const Connect = () => {
       });
     }
 
-    const audioTask = new Audio('https://assets.codepen.io/127738/Among_Us-Task-complete.mp3');
  
   }, [])
   return <><svg width="907" height="907" viewBox="0 0 907 907">

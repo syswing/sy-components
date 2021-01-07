@@ -21,49 +21,12 @@ module.exports = {
     publicPath: '/dist/',
     umdNamedDefine: true
   },
-  module: {
-    rules: [{
-      test: /\.less$/,
-      use: [{
-        loader: "style-loader"
-      }, 
-      // {
-      //   loader: MiniCssExtractPlugin.loader,
-      //   options: {
-      //     esModule: false,
-      //     modules: {
-      //       namedExport: true,
-      //     },
-      //   },
-      // }, 
-      {
-        loader: "css-loader",
-        options: {
-          modules: true
-        }
-      }, {
-        loader: "less-loader"
-      }]
-    }, {
-      test: /\.tsx?$/,
-      use: 'ts-loader',
-      exclude: /node_modules/
-    }]
-  }
-  ,
   plugins: [
     new CaseSensitivePathsPlugin(),
     new WebpackBar({
-      name: '🚚 sy Design Tools',
+      name: '🚚 building...',
       color: '#2f54eb',
     }),
-    // new MiniCssExtractPlugin({
-    //   // Options similar to the same options in webpackOptions.output
-    //   // all options are optional
-    //   filename: '[name].css',
-    //   chunkFilename: '[id].css',
-    //   ignoreOrder: false, // Enable to remove warnings about conflicting order
-    // }),
   ],
   externals: {
     "react": {

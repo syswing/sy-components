@@ -9,7 +9,7 @@ const warpper = {
   width: 300,
   marginBottom: 20,
   marginLeft: 100,
-  float: "left",
+  float: "left"
 } as React.CSSProperties;
 ReactDOM.render(
   <>
@@ -115,9 +115,7 @@ ReactDOM.render(
     </Card>
     <Card title="slide tab" styles={warpper}>
       <>
-      <SlideTab tabArrs={['aa','bb','123','阿道夫']} callback={(e:Number) => {
-        console.log(e)
-      }}/>
+      <SlideTab tabArrs={['电容器123','阿斯蒂a','请问','阿道夫']} tabFontSize={20} tabMargin={10}/>
       </>
     </Card>
     <Card title="Among Us" styles={warpper}>

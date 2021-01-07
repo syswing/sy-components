@@ -1,15 +1,16 @@
 import React, { CSSProperties, useState, useEffect } from 'react'
 import styled from 'styled-components'
 
+// ? 默认配置
 const fontSize = 16
 const margin = 6
-
-// todo 由于字体的原因，下划线在滑动的过程中会偏移，使用等宽字体可以解决
 
 interface SlideTabProps {
   tabArrs: string[];
   style?: CSSProperties;
-  callback: Function;
+  callback?: Function;
+  tabFontSize?:number;
+  tabMargin?:number;
 }
 const SlideLine = styled.div`
     position: absolute;
@@ -20,14 +21,14 @@ const SlideLine = styled.div`
   `
 const TabWarpper = styled.div`
   display: flex;
-  font-size: ${fontSize}px;
+  font-size: ${(props: { tabFontSize: any }) => props?.tabFontSize ?? fontSize}px;
   height: 2.5vh;
   position: relative;
   color:#ABADB5;
   & span{
     height: 2.1vh;
     line-height: 2.1vh;
-    margin: 0 ${margin}px;
+    margin: 0 ${(props: { tabMargin: any }) => props?.tabMargin ?? margin}px;
     cursor: pointer;
   }
   & span.selected{
@@ -50,29 +51,32 @@ const getStringLen = (str:string) => {
 
 const SlideTab = (props: SlideTabProps) => {
 
-
-  const { tabArrs, style, callback } = props
-  
+  const { tabArrs, style, callback,tabFontSize,tabMargin } = props
   const defaultStringLeng = getStringLen(tabArrs[0])
   const [currentSelected, setCurrentSelected] = useState(0)
-  const [barWidth, setBarWidth] = useState(defaultStringLeng[0] * fontSize / 2 + defaultStringLeng[1] * fontSize / 2 + defaultStringLeng[2] * fontSize)
-  const translateX = tabArrs.slice(0, currentSelected).reduce((arr, cur) => arr + getStringLen(cur)[0] * fontSize / 2 + getStringLen(cur)[1] * fontSize / 2 + getStringLen(cur)[2] * fontSize, 0)
+  const [barWidth, setBarWidth] = useState(defaultStringLeng[0] * (tabFontSize ?? fontSize) / 2 + defaultStringLeng[1] * (tabFontSize ?? fontSize) / 2 + defaultStringLeng[2] * (tabFontSize ?? fontSize))
+  const [ translateX,setTranslateX ] = useState(6)
 
   useEffect(() => {
-    callback(currentSelected)
+    if(callback){
+      callback(currentSelected)
+    } 
   }, [currentSelected])
 
-  return <TabWarpper style={style}>
+  return <TabWarpper tabFontSize={tabFontSize} tabMargin={tabMargin} style={style}>
     {tabArrs.map((tab, index) => {
-      return <span className={index === currentSelected ? 'selected' : ''} key={`tab_${index}`} onClick={() => {
+      return <span className={index === currentSelected ? 'selected' : ''} key={`tab_${index}`} onClick={(e) => {
+        e.preventDefault()
+        // @ts-ignore
+        setTranslateX(e.target.offsetLeft)
         setCurrentSelected(index)
-        setBarWidth(getStringLen(tabArrs[index])[0] * fontSize / 2 + getStringLen(tabArrs[index])[1] * fontSize / 2 + getStringLen(tabArrs[index])[2] * fontSize)
+        // @ts-ignore
+        setBarWidth(e.target.clientWidth)
       }}>{tab}</span>
     })}
-
       <SlideLine style={{
         width: `${barWidth}px`,
-        transform: `translateX(${(currentSelected ? translateX : 0) + ((currentSelected * 2 + 1) * margin )}px)`
+        transform: `translateX(${translateX}px)`
       }}></SlideLine>
 
   </TabWarpper>

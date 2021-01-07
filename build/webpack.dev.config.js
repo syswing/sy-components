@@ -49,8 +49,7 @@ module.exports = {
       analyzerPort: '7777',
     }),
     new HtmlWebpackPlugin({
-      title: 'Custom template',
-      // Load a custom template (lodash by default)
+      title: 'custom template',
       template: 'index.html'
     })
   ],

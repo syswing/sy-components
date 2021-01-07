@@ -23,10 +23,10 @@ const Waterfall = ({children}:{
 }) => {
 
   const FallWarpper = styled`
-  -moz-column-width: 13em;
-  -webkit-column-width: 13em;
-  -moz-column-gap: 1em;
-  -webkit-column-gap: 1em; 
+    -moz-column-width: 13em;
+    -webkit-column-width: 13em;
+    -moz-column-gap: 1em;
+    -webkit-column-gap: 1em; 
     *, *:before, *:after {
       box-sizing:  border-box !important;
     }
