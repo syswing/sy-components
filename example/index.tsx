@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import { Table, Tab,Loadings,Buttons } from "../dist/main.js";
-import { Table, Tab, Loadings, Buttons,SlideTab } from "../src/index";
+import { Table, Tab,Loadings,Buttons,SlideTab } from "../dist/main.js";
+// import { Table, Tab, Loadings, Buttons,SlideTab } from "../src/index";
 // import  Waterfall from '../src/Layout/Waterfall'
 import Card from "./Card";
 import Toys from "../src/Toys";

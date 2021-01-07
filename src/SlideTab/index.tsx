@@ -78,7 +78,6 @@ const SlideTab = (props: SlideTabProps) => {
         width: `${barWidth}px`,
         transform: `translateX(${translateX}px)`
       }}></SlideLine>
-
   </TabWarpper>
 }
 

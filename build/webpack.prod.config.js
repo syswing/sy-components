@@ -28,6 +28,14 @@ module.exports = {
       color: '#2f54eb',
     }),
   ],
+  module: {
+    rules: [{
+      test: /\.tsx?$/,
+      use: 'ts-loader',
+      exclude: /node_modules/
+    }]
+  }
+  ,
   externals: {
     "react": {
       root: 'React',
