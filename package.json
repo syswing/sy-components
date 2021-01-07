@@ -20,6 +20,7 @@
     "server": "node ./example/src/server.js",
     "build": "webpack --config ./build/webpack.prod.config.js",
     "build:types": "tsc -p tsconfig.build.json",
+    "build:web":"webpack --config ./build/webpack.web.config.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prepublish": "npm run build"

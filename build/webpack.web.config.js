@@ -3,7 +3,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './example/index.tsx',
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '..'),
+    path: path.resolve(__dirname, '../.web'),
     publicPath:'/'
   },
   module: {
@@ -45,23 +45,9 @@ module.exports = {
     }]
   },
   plugins: [
-    new BundleAnalyzerPlugin({
-      analyzerPort: '7777',
-    }),
     new HtmlWebpackPlugin({
-      title: 'custom template',
+      title: '展示页',
       template: 'index.html'
     })
-  ],
-  devServer: {
-    // historyApiFallback: true,
-    // // disableHostCheck: true,
-    // hot: true,
-    // // open: true,
-    // // contentBase: './dist',
-    // port:3002,
-    contentBase: path.join(__dirname, "dist"),
-    compress: true,
-    port: 9000
-  },
+  ]
 };
