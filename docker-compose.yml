@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  web:
+    expose:
+      - "8000"
+    ports:
+      - 8000:8000
+    container_name: sy-components
+    # network_mode: "host"
+    build:
+      context: ./

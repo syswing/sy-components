@@ -17,7 +17,7 @@ ReactDOM.render(
       title="表格组件"
       styles={{
         ...warpper,
-      }}
+      }} 
     >
       <>
         <div>

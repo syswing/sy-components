@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 declare type Source = {
     [propName: string]: any;
 };
@@ -9,14 +9,14 @@ interface TableCols {
     unit?: string;
     width?: string | number;
 }
-export declare type Order = 'desc' | 'asc';
+export declare type Order = "desc" | "asc";
 export interface YlTableProps {
     source: Source[];
     rank?: string;
     cols: TableCols[];
     order?: Order;
     max?: number;
-    type?: 'noNO';
+    type?: "noNO";
     LineHeight?: number;
     divider?: boolean;
     styles?: React.CSSProperties;
