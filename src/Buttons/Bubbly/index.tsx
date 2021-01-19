@@ -2,6 +2,12 @@ import styled, { keyframes } from "styled-components";
 import React, { useState } from "react";
 import Color from 'color'
 
+export interface BubblyProps{
+  children: React.ReactChild;
+  styles?: React.CSSProperties | undefined;
+  primaryColor?: string | undefined;
+}
+
 const Bubbly = ({
   children,
   styles,

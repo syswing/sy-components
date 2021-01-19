@@ -52,4 +52,6 @@ nrm use npm      // 切换npm镜像
 
 ## 测试组件
 
+## storybook
+
 测试

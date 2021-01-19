@@ -1,4 +1,3 @@
-/// <reference types="react" />
 declare const _default: {
     Elastic: ({ primaryColor, width, height }: {
         primaryColor?: string | undefined;
