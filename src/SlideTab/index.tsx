@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const fontSize = 16
 const margin = 6
 
-interface SlideTabProps {
+export interface SlideTabProps {
   tabArrs: string[];
   style?: CSSProperties;
   callback?: Function;
@@ -49,7 +49,7 @@ const getStringLen = (str:string) => {
   return [(numberLength?.length ?? 0),(lettersLength?.length ?? 0),restString.length ?? 0]
 }
 
-const SlideTab = (props: SlideTabProps) => {
+export default (props: SlideTabProps) => {
 
   const { tabArrs, style, callback,tabFontSize,tabMargin } = props
   const defaultStringLeng = getStringLen(tabArrs[0])
@@ -81,4 +81,4 @@ const SlideTab = (props: SlideTabProps) => {
   </TabWarpper>
 }
 
-export default SlideTab
+
