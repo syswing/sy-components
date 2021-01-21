@@ -6,3 +6,4 @@ yarn.lock
 /site/node_modules
 /.web
 /debug.log
+/storybook-static

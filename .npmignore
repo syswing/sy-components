@@ -4,6 +4,7 @@ build/
 example/
 src/
 useit/
+storybook-static/
 
 index.html
 postcss.config.js
