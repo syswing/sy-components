@@ -2,6 +2,12 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import Color from 'color'
 
+export interface ElasticProps  {
+  primaryColor?:string,
+  width?:number,
+  height?:number,
+}
+
 const Elastic = ({primaryColor,width,height}:{
   primaryColor?:string,
   width?:number,
@@ -17,7 +23,7 @@ const Elastic = ({primaryColor,width,height}:{
     }
     25% {
       height: 4pt;
-      margin-top: 23pt;
+      margin-top: ${width ? width / 2 : 23}pt;
     }
     50% {
       width: 4pt;

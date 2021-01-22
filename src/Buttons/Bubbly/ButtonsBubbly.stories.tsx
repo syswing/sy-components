@@ -1,29 +1,22 @@
 import React from 'react';
 import { Story } from '@storybook/react/types-6-0';
-import Buttons from './index';
+import Buttons from '../index';
 
 export default {
-  title: 'Buttons',
+  title: 'Buttons Bubbly',
   component: Buttons,
   argTypes: {
     primaryColor: { control: 'color' },
     styles:{
-      
+      width:'100px'
     }
   },
 }
 
 const Bubbly: Story = (args) => <Buttons.Bubbly {...args} >{args.label}</Buttons.Bubbly>;
-const More: Story = (args) => <Buttons.More text={'点击测试'} {...args}/>;
-
 
 export const BubblyButton = Bubbly.bind({});
 BubblyButton.args = {
   primaryColor:"#000",
   label:'点击测试'
-};
-
-export const MoreButton = More.bind({});
-MoreButton.args = {
-  label: 'Button',
 };

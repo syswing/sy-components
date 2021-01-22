@@ -2,6 +2,7 @@ import React, { CSSProperties, useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 // ? 默认配置
+
 const fontSize = 16
 const margin = 6
 
@@ -9,25 +10,23 @@ export interface SlideTabProps {
   tabArrs: string[];
   style?: CSSProperties;
   callback?: Function;
-  tabFontSize?:number;
+  tabFontSize?:number; 
   tabMargin?:number;
 }
 const SlideLine = styled.div`
-    position: absolute;
-    bottom: 0;
-    height: 0.1vh;
-    background: #1D93F9;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  `
+  position: absolute;
+  bottom: 0;
+  height: 0.1vh;
+  background: #1D93F9;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+`
 const TabWarpper = styled.div`
   display: flex;
   font-size: ${(props: { tabFontSize: any }) => props?.tabFontSize ?? fontSize}px;
-  height: 2.5vh;
+  padding-bottom:${(props: { tabMargin: any }) => props?.tabMargin * 0.4 ?? margin}px;
   position: relative;
   color:#ABADB5;
   & span{
-    height: 2.1vh;
-    line-height: 2.1vh;
     margin: 0 ${(props: { tabMargin: any }) => props?.tabMargin ?? margin}px;
     cursor: pointer;
   }
@@ -55,7 +54,7 @@ export default (props: SlideTabProps) => {
   const defaultStringLeng = getStringLen(tabArrs[0])
   const [currentSelected, setCurrentSelected] = useState(0)
   const [barWidth, setBarWidth] = useState(defaultStringLeng[0] * (tabFontSize ?? fontSize) / 2 + defaultStringLeng[1] * (tabFontSize ?? fontSize) / 2 + defaultStringLeng[2] * (tabFontSize ?? fontSize))
-  const [ translateX,setTranslateX ] = useState(6)
+  const [ translateX,setTranslateX ] = useState(tabMargin)
 
   useEffect(() => {
     if(callback){
