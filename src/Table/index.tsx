@@ -16,7 +16,7 @@ interface TableCols {
 
 export type Order = "desc" | "asc";
 
-export interface YlTableProps {
+export interface TableProps {
   source: Source[];
   rank?: string;
   cols: TableCols[];
@@ -48,7 +48,7 @@ const XHidden = styled.div`
 `;
 
 const NormalTabel = styled.table`
-  width: ${(props: { type: string; rank: any; }) => props?.type !== 'noNO' && !!props?.rank ? '95%' : '100%'};
+  width: ${(props: { type: string; rank: any; }) => props?.type !== 'noNO' && !!props?.rank ? '100%' : '100%'};
   text-align: center;
   ${(props: { rank: any; }) => {
     if(!props?.rank) return `
@@ -143,7 +143,7 @@ const ScrollInner = styled.div`
   ${(props: { scroll: any; }) => props?.scroll ?? null}
 `;
 
-const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
+const YlTable: React.FC<TableProps> = (props: TableProps) => {
   const { source, cols, rank, order, type, divider, max, scroll } = props;
 
   const mCols = _.cloneDeep(cols);
@@ -153,7 +153,7 @@ const YlTable: React.FC<YlTableProps> = (props: YlTableProps) => {
     const { max, LineHeight } = props;
 
     const style = {
-      height: `${(max + 1) * ((LineHeight ?? 28) + 3)}px`,
+      height: `${(max) * ((LineHeight ?? 28) + 3)}px`,
     };
 
     return (
