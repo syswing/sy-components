@@ -7,3 +7,5 @@ yarn.lock
 /.web
 /debug.log
 /storybook-static
+
+*.stories.d.ts

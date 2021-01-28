@@ -1,3 +1,9 @@
+/// <reference types="react" />
+export interface ElasticProps {
+    primaryColor?: string;
+    width?: number;
+    height?: number;
+}
 declare const Elastic: ({ primaryColor, width, height }: {
     primaryColor?: string | undefined;
     width?: number | undefined;

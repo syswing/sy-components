@@ -10,7 +10,7 @@ export default {
   },
 }
 
-const ToysTemplate: Story = (args) => <Toys.AmongUs.Connect />
+const ToysTemplate: Story = () => <Toys.AmongUs.Connect />
  
 
 

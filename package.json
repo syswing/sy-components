@@ -17,7 +17,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config ./build/webpack.dev.config.js --mode development --open",
-    "server": "node ./example/src/server.js",
     "build": "webpack --config ./build/webpack.prod.config.js",
     "build:types": "tsc -p tsconfig.build.json",
     "build:web": "webpack --config ./build/webpack.web.config.js",
@@ -32,10 +31,10 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.3",
-    "@storybook/addon-actions": "^6.1.14",
-    "@storybook/addon-essentials": "^6.1.14",
-    "@storybook/addon-links": "^6.1.14",
-    "@storybook/react": "^6.1.14",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/react": "^6.1.15",
     "@types/classnames": "^2.2.10",
     "@types/lodash": "^4.14.162",
     "@types/react": "^16.9.53",

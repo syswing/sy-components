@@ -10,7 +10,7 @@ interface TableCols {
     width?: string | number;
 }
 export declare type Order = "desc" | "asc";
-export interface YlTableProps {
+export interface TableProps {
     source: Source[];
     rank?: string;
     cols: TableCols[];
@@ -23,5 +23,5 @@ export interface YlTableProps {
     scroll?: string;
 }
 export declare const quickSort: (arr: any[], field: string, order: Order) => any[];
-declare const YlTable: React.FC<YlTableProps>;
+declare const YlTable: React.FC<TableProps>;
 export default YlTable;
