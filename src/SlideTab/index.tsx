@@ -39,7 +39,6 @@ const TabWarpper = styled.div`
 `
 const getStringLen = (str:string) => {
   // ! 未过滤符号
-
   const numbersLengthRegex = /[0-9]/g
   const lettersLengthRegex = /[a-z]|[A-Z]/g
   const numberLength = str.match(numbersLengthRegex)

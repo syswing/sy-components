@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export interface ElasticProps {
     primaryColor?: string;
     width?: number;
